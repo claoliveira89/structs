@@ -27,3 +27,53 @@
 
 - TURN address INTO value WITH *address;
 - TURN value INTO address WITH &value.
+
+## 48. Reference vs Value Types
+> Arrays
+>
+>> Primitive data structure
+>
+>> Can't be resized
+>
+>> Rarely used directly
+> -------------------------------
+
+> Slices
+>
+>> Can grow and shrink
+>
+>> Used 99% of the time for lists of elements
+> -------------------------------------
+
+- Anytime we make a slice, Go makes a slice(containing information, such as the the pointer to the slice's content - pointer to head, its capacity and its length) and an array with the slice content;
+- Although Go makes a copy of the slice information when a slice is passed to a function, the pointer still points to the original slice.
+
+> VALUE TYPES:
+>
+> Use pointers to change these things in a function
+>
+>> int
+>
+>> float
+>
+>> string
+>
+>> bool
+>
+>> structs
+> --------------------------------------------
+
+> REFERENCE TYPES:
+>
+> Don't worry about pointers with these
+>
+>> slices
+>
+>> maps
+>
+>> channels
+>
+>> pointers
+>
+>> functions
+> -------------------------------------
